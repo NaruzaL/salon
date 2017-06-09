@@ -6,7 +6,7 @@
 //
 // namespace Salon
 // {
-//   // [Collection("hair_salon_test")]
+//   [Collection("hair_salon_test")]
 //   public class StylistTest : IDisposable
 //   {
 //     public StylistTest()
@@ -14,7 +14,6 @@
 //       DBConfiguration.ConnectionString  = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=hair_salon_test;Integrated Security=SSPI;";
 //     }
 //
-//     // [Collection("hair_salon_test")]
 //     [Fact]
 //     public void Test_Equal_ReturnsTrueIfStylistsAreTheSame()
 //     {
@@ -23,7 +22,6 @@
 //       Assert.Equal(firstStylist, secondStylist);
 //     }
 //
-//     // [Collection("hair_salon_test")]
 //     [Fact]
 //     public void Test_Save_SavesToDatabase()
 //       {
@@ -55,6 +53,7 @@
 //     public void Dispose()
 //     {
 //       Stylist.DeleteAll();
+//       Client.DeleteAll();
 //     }
 //   }
 // }

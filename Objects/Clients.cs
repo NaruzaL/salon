@@ -44,7 +44,7 @@ namespace Salon
       SqlConnection conn = DB.Connection();
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("INSERT INTO clients (name, stylistId) OUTPUT INSERTED.id VALUES (@Name, @stylist_id);", conn);
+      SqlCommand cmd = new SqlCommand("INSERT INTO clients (name, stylist_id) OUTPUT INSERTED.id VALUES (@Name, @stylist_id);", conn);
 
 
       SqlParameter clientNameParameter = new SqlParameter();
@@ -109,7 +109,7 @@ namespace Salon
       SqlConnection conn = DB.Connection();
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("SELECT * FROM stylists WHERE id = @ClientId", conn);
+      SqlCommand cmd = new SqlCommand("SELECT * FROM clients WHERE id = @ClientId", conn);
       SqlParameter clientIdParameter = new SqlParameter();
       clientIdParameter.ParameterName = "@ClientId";
       clientIdParameter.Value = id.ToString();

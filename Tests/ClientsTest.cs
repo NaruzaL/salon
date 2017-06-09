@@ -6,7 +6,7 @@
 //
 // namespace Salon
 // {
-//   // [Collection("hair_salon_test")]
+//   [Collection("hair_salon_test")]
 //   public class ClientTest : IDisposable
 //   {
 //     public ClientTest()
@@ -14,20 +14,21 @@
 //       DBConfiguration.ConnectionString  = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=hair_salon_test;Integrated Security=SSPI;";
 //     }
 //
-//       // [Collection("hair_salon_test")]
-//       [Fact]
-//       public void Test_Save_SavesToDatabase()
-//         {
-//          Client testClient = new Client("Steve", 1);
-//           testClient.Save();
-//           List<Client> result =Client.GetAll();
-//           List<Client> testList = new List<Client>{testClient};
-//           Assert.Equal(testList[0], result[0]);
-//         }
-//         public void Dispose()
-//         {
-//          Client.DeleteAll();
-//         }
+//
+//   [Fact]
+//   public void Test_Save_SavesClientToDatabase()
+//     {
+//      Client testClient = new Client("Steve", 1);
+//       testClient.Save();
+//       List<Client> result = Client.GetAll();
+//       List<Client> testList = new List<Client>{testClient};
+//       Assert.Equal(testList, result);
+//     }
+//
+//     public void Dispose()
+//     {
+//      Client.DeleteAll();
+//     }
 //
 //   }
 // }
