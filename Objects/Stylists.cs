@@ -106,7 +106,6 @@ namespace Salon
       return allStylists;
     }
 
-
     public static Stylist Find(int id)
     {
       SqlConnection conn = DB.Connection();
@@ -171,7 +170,5 @@ namespace Salon
       }
       return clients;
     }
-
-
   }
 }

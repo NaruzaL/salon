@@ -33,6 +33,25 @@ namespace Salon
       }
 
       [Fact]
+      public void Test_Save_AssignsIdToObject()
+      {
+        Stylist testStylist = new Stylist("Sue");
+        testStylist.Save();
+        int testId = testStylist.GetId();
+        int savedStylistId = Stylist.GetAll()[0].GetId();
+        Assert.Equal(testId, savedStylistId);
+      }
+
+      [Fact]
+      public void Test_Find_FindsStylistInDatabase()
+      {
+        Stylist testStylist = new Stylist("Jessica");
+        testStylist.Save();
+        Stylist foundStylist = Stylist.Find(testStylist.GetId());
+        Assert.Equal(testStylist, foundStylist);
+      }
+
+      [Fact]
       public void Test_GetClients_RetrievesAllClientssWithCategory()
       {
         Stylist testStylist = new Stylist("Bob", 1);
