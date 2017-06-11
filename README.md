@@ -1,3 +1,61 @@
+# RepeatCounter
+
+#### _Week 3 solo project C#, 06.09.2017_
+
+#### By _**Pete Lazuran**_
+
+## Description
+
+This app will allow a salon owner to keep track of their employees and their clientele.
+
+
+|Behavior|User Input|Expected Output|
+|---------|----------|-----------|
+|User clicks on a hypertexted word it takes them to the appropriate page|Click on "add a stylist"|Program loads "/stylist/add"|
+|User fills out the form to add a stylist and clicks submit, program saves the input to the database|"Stephanie"|"Stephanie" and all other entered stylists now display in the list of stylists|
+
+## Setup/Installation Requirements
+##### (Instructions written for a PC using PowerShell with Mono, ASP.Net 5, and Microsoft SQL server management studio installed)
+
+* Open Terminal.
+* Clone this repository.
+* Navigate to the file directory in terminal (..\Desktop\RepeatCounter>).
+* Open in a text editor if you wish to view the code.
+* To view the site in your local server enter the command "dnx kestrel" in your Terminal.
+
+* **To recreate the database used in this project by scratch in your powershell you must enter the following commands:**
+* _sqlcmd -S "(localdb)\mssqllocaldb"_
+* _GO_ (at this point your file path should change to "1>", denoting that you have accessed your database)
+*  _CREATE DATABASE_ hair_salon;
+* _GO_
+* _CREATE TABLE stylists (name VARCHAR(255), id INT IDENTITY(1,1))_
+* _GO_
+* _CREATE TABLE clients (name VARCHAR(255)_, stylist_id _INT, id INT IDENTITY(1,1))_
+* _GO_
+
+
+## Known Bugs
+
+None
+
+## Support and contact details
+
+Direct all questions and comments to pdlazuran@gmail.com
+
+## Technologies Used
+
+C#, HTML, Nancy, Razor, Xunit, PowerShell, MSSQL server management studio 2017.
+
+### License
+
+*MIT*
+
+Copyright (c) 2017 **_Pete Lazuran_**
+
+
+
+
+
 
 ## Specs
 
