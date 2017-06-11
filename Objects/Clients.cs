@@ -30,6 +30,22 @@ namespace Salon
       return _id;
     }
 
+    public override bool Equals(System.Object otherClient)
+    {
+      if (!(otherClient is Client))
+      {
+        return false;
+      }
+      else
+      {
+        Client newClient = (Client) otherClient;
+        bool idEquality = (this.GetId() == newClient.GetId());
+        bool nameEquality = (this.GetName() == newClient.GetName());
+        bool stylistIdEquality = (this.GetStylistId() == newClient.GetStylistId());
+        return (idEquality && nameEquality && stylistIdEquality);
+      }
+    }
+
     public static void DeleteAll()
     {
       SqlConnection conn = DB.Connection();
@@ -44,17 +60,18 @@ namespace Salon
       SqlConnection conn = DB.Connection();
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("INSERT INTO clients (name, stylist_id) OUTPUT INSERTED.id VALUES (@Name, @stylist_id);", conn);
+      SqlCommand cmd = new SqlCommand("INSERT INTO clients (Name, Stylist_id) OUTPUT INSERTED.id VALUES (@ClientName, @StylistId);", conn);
 
 
       SqlParameter clientNameParameter = new SqlParameter();
-      clientNameParameter.ParameterName = "@Name";
+      clientNameParameter.ParameterName = "@ClientName";
       clientNameParameter.Value = this.GetName();
-      cmd.Parameters.Add(clientNameParameter);
 
       SqlParameter clientStylistIdParameter = new SqlParameter();
-      clientStylistIdParameter.ParameterName = "@stylist_id";
+      clientStylistIdParameter.ParameterName = "@StylistId";
       clientStylistIdParameter.Value = this.GetStylistId();
+
+      cmd.Parameters.Add(clientNameParameter);
       cmd.Parameters.Add(clientStylistIdParameter);
 
       SqlDataReader rdr = cmd.ExecuteReader();

@@ -53,11 +53,11 @@ namespace Salon
       SqlConnection conn = DB.Connection();
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("INSERT INTO stylists (name) OUTPUT INSERTED.id VALUES (@Name);", conn);
+      SqlCommand cmd = new SqlCommand("INSERT INTO stylists (name) OUTPUT INSERTED.id VALUES (@stylistName);", conn);
 
 
       SqlParameter stylistParameter = new SqlParameter();
-      stylistParameter.ParameterName = "@Name";
+      stylistParameter.ParameterName = "@stylistName";
       stylistParameter.Value = this.GetName();
       cmd.Parameters.Add(stylistParameter);
 
@@ -155,9 +155,9 @@ namespace Salon
       List<Client> clients = new List<Client> {};
       while(rdr.Read())
       {
-        string clientName = rdr.GetString(1);
-        int clientStylistId = rdr.GetInt32(2);
-        int clientId = rdr.GetInt32(0);
+        string clientName = rdr.GetString(0);
+        int clientStylistId = rdr.GetInt32(1);
+        int clientId = rdr.GetInt32(2);
         Client newClient = new Client(clientName, clientStylistId, clientId);
         clients.Add(newClient);
       }
