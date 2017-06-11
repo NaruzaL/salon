@@ -44,10 +44,9 @@ namespace Salon
         return View["clients.cshtml", model];
       };
 
-      Post["/client/delete"] = _ => {
-        Client.DeleteAll();
-        List<Client> allClients = Client.GetAll();
-        return View["index.cshtml", allClients];
+      Get["client/edit/{id}"] = parameters => {
+        Client SelectedClient = Client.Find(parameters.id);
+        return View["client_edit.cshtml", SelectedClient];
       };
 
       Patch["client/edit/{id}"] = parameters => {
@@ -55,6 +54,18 @@ namespace Salon
         SelectedClient.Update(Request.Form["clientName"]);
         return View["success.cshtml"];
       };
+
+      Get["client/delete/{id}"] = parameters => {
+        Client SelectedClient = Client.Find(parameters.id);
+        return View["client_delete.cshtml", SelectedClient];
+      };
+
+      Delete["client/delete/{id}"] = parameters => {
+        Client SelectedClient = Client.Find(parameters.id);
+        SelectedClient.Delete();
+        return View["success.cshtml"];
+      };
+
     }
   }
 }
