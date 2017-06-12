@@ -24,7 +24,7 @@ This app will allow a salon owner to keep track of their employees and each indi
 
 * Open Terminal.
 * Clone this repository.
-* Navigate to the file directory in terminal (..\Desktop\RepeatCounter>).
+* Navigate to the file directory in terminal (..\Desktop\Salon>).
 * Open in a text editor if you wish to view the code.
 * To view the site in your local server enter the command "dnx kestrel" in your Terminal.
 
