@@ -30,7 +30,7 @@ This app will allow a salon owner to keep track of their employees and each indi
 
 * **To recreate the database used in this project by scratch in your powershell you must enter the following commands:**
 * _sqlcmd -S "(localdb)\mssqllocaldb"_
-* _GO_ (at this point your file path should change to "1>", denoting that you have accessed your database)
+* _GO_ (at this point your file path should change to "1>", denoting that you have accessed your database server)
 *  _CREATE DATABASE_ hair_salon;
 * _GO_
 * _CREATE TABLE stylists (name VARCHAR(255), id INT IDENTITY(1,1))_
