@@ -1,4 +1,4 @@
-# RepeatCounter
+# Hair Salon
 
 #### _Week 3 solo project C#, 06.09.2017_
 
@@ -6,13 +6,18 @@
 
 ## Description
 
-This app will allow a salon owner to keep track of their employees and their clientele.
+This app will allow a salon owner to keep track of their employees and each individual employee's clientele.
 
 
 |Behavior|User Input|Expected Output|
 |---------|----------|-----------|
 |User clicks on a hypertexted word it takes them to the appropriate page|Click on "add a stylist"|Program loads "/stylist/add"|
 |User fills out the form to add a stylist and clicks submit, program saves the input to the database|"Stephanie"|"Stephanie" and all other entered stylists now display in the list of stylists|
+|Program can pull all names from a table for display as a list|Click on "View all stylists"|"Stephanie", "Maxine", "Dolly"|
+|Clicking on a stylist's name will load a page of all their clients|User clicks on "Stephanie"|Program loads "/stylist/{id}" with all clients of that stylist listed|
+|User fills out the form to add a client to a particular stylist and clicks submit, program saves the input to the database|User types "Sandra" into the input field and selects "Stephanie" as her stylist from the drop down list|"Sandra" and all other clients of Stephanie now display in her list of clients|
+|Clients names are editable|User clicks **edit** next to the client name "Sandra". In the input field user types "Sandra Boos"|Database entry for "Sandra" is patched to be "Sandra Boos"|
+|Clients can be deleted from the database|User clicks **delete** next to the client name "Sandra Boos", is taken to a caution page. Then clicks "delete" button|Database entry for "Sandra Boos" is deleted|
 
 ## Setup/Installation Requirements
 ##### (Instructions written for a PC using PowerShell with Mono, ASP.Net 5, and Microsoft SQL server management studio installed)
