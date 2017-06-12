@@ -62,7 +62,7 @@ Copyright (c) 2017 **_Pete Lazuran_**
 
 
 
-## Specs
+<!-- ## Specs
 
 * Create a database named hair_salon with tables named stylist and client. Test that the database is empty. This ensures the database has been initialized correctly.
 
@@ -80,4 +80,4 @@ Copyright (c) 2017 **_Pete Lazuran_**
 
 * Create an update method for class client to allow the user to update a client's name.
 
-* Create a delete function to allow the user to remove a client from their salon.
+* Create a delete function to allow the user to remove a client from their salon. -->
